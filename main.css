@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --numberOfColumns: 16;
+  --numberOfRows: 16;
+}
+
+#button-container {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  
+  max-width: 20rem;
+  width: 15rem;
+
+}
+
+#grid-container {
+  border: 1px solid black;
+  
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+
+  max-width: 35rem;
+  max-height: 35rem;
+  width: 35rem;
+  height: 35rem;
+
+  display: grid;
+  grid-template-columns: repeat(var(--numberOfColumns), auto);
+  grid-template-rows: repeat(var(--numberOfRows), auto);
+}
+
+#grid-item {
+  border: 1px dotted black;
+}
