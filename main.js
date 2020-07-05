@@ -1,4 +1,4 @@
-const gridContainer = document.querySelector('#grid-container');
+const gridContainer = document.querySelector('#grid');
 const root = document.querySelector(':root');
 
 const numColumns = getComputedStyle(root).getPropertyValue('--numberOfColumns');
@@ -55,7 +55,7 @@ editGridBtn.addEventListener('click', () => {
 });
 
 // Get random colors
-const rainbowBtn = document.querySelector('#random-color-btn');
+const rainbowBtn = document.querySelector('.rainbow-circle');
 
 rainbowBtn.addEventListener('click', () => {
   let items = document.querySelectorAll('#grid-item');

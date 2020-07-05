@@ -3,40 +3,149 @@
   padding: 0;
 }
 
+*:focus {
+  outline: none;
+}
+
 :root {
-  --numberOfColumns: 16;
-  --numberOfRows: 16;
+  --numberOfColumns: 64;
+  --numberOfRows: 64;
 }
 
-#button-container {
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  
-  width: 15rem;
-
+body {
+  background-color: #1A1A1D;
 }
 
-#grid-container {
+#title {
+  text-align: center;
+  font-family: Indie Flower, Arial, Helvetica, sans-serif;
+  font-size: 5rem;
+  text-shadow: 0 3px 6px #000;
+}
+
+.text-grey {
+  color: #4E4E50;
+}
+
+.text-white {
+  color: #FFF;
+}
+
+.text-pink {
+  color: #950740;
+}
+
+#grid-item {
   border: 1px solid black;
-  
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+}
 
-  max-width: 35rem;
-  max-height: 35rem;
-  width: 35rem;
-  height: 35rem;
+#settings-container {
+  background-color: pink;
+  float: left;
+
+  width: 400px;
+  height: 45rem;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 0.3fr 2fr 0.4fr;
+  grid-template-areas: 
+  ". title ."
+  ". grid sidebar"
+  ". palette .";
+}
+
+#grid {
+  grid-area: grid;
+  background-color: pink;
+  border: 1px solid black;
+  background-color: white;
+  margin: auto;
+  width: 45rem;
+  height: 45rem;
+  
 
   display: grid;
   grid-template-columns: repeat(var(--numberOfColumns), auto);
   grid-template-rows: repeat(var(--numberOfRows), auto);
 }
 
-#grid-item {
-  border: 1px dotted black;
+.sidebar {
+  grid-area: sidebar; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.palette {
+  grid-area: palette; 
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title {
+  grid-area: title;
+}
+
+#palette-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px #000;
+}
+
+#palette-circle:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.black-circle {
+  background-color: #000;
+}
+
+.blue-circle {
+  background-color: #21B5C7;
+}
+
+.red-circle {
+  background-color: #AA1E1E;
+}
+
+.yellow-circle {
+  background-color: #DED22C;
+}
+
+.green-circle {
+  background-color: #17A72F;
+}
+
+.orange-circle {
+  background-color: #FF7010;
+}
+
+.pink-circle {
+  background-color: #E616D1;
+}
+
+.rainbow-circle {
+  background-image: linear-gradient(#21B5C7, #AA1E1E,
+   #DED22C, #17A72F, #FF7010, #E616D1);
+   transform: rotate(-45deg);
+}
+
+.settings-btn {
+  background-color: transparent;
+  width: 150px;
+  height: 60px;
+  border: 2px solid #C3073F;
+  border-radius: 15px;
+  color: white;
+  font-family: Fira Code;
+
+  text-align: center;
+  font-size: 20px;
 }
