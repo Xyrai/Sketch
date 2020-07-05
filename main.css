@@ -50,7 +50,7 @@ body {
 .main-container {
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr;
-  grid-template-rows: 0.3fr 2fr 0.4fr;
+  grid-template-rows: 0.3fr 2fr 0.3fr;
   grid-template-areas: 
   ". title ."
   ". grid sidebar"
