@@ -34,7 +34,15 @@ clearBtn.addEventListener('click', () => {
 const editGridBtn = document.querySelector('#edit-grid-btn');
 
 editGridBtn.addEventListener('click', () => {
-  let gridSize = parseInt(prompt("Please give a number", 0));
+  let gridSize = parseInt(prompt("Please give a number between 1 and 200", 1));
+
+  if (!gridSize) {
+    return;
+  }
+
+  if (gridSize < 1 || gridSize > 200) {
+    return alert("Try again...");
+  }
 
   gridContainer.innerHTML = "";
   document.documentElement.style.setProperty('--numberOfColumns', gridSize);
