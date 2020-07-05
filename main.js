@@ -59,88 +59,63 @@ editGridBtn.addEventListener('click', () => {
     );
     gridContainer.append(gridItem);
   }
-
 });
 
-// Get random colors
-const blackBtn = document.querySelector('.black-circle');
-const blueBtn = document.querySelector('.blue-circle');
-const redBtn = document.querySelector('.red-circle');
-const yellowBtn = document.querySelector('.yellow-circle');
-const greenBtn = document.querySelector('.green-circle');
-const orangeBtn = document.querySelector('.orange-circle');
-const pinkBtn = document.querySelector('.pink-circle');
+// Function to change the color you draw with
+let changeDrawingColor = e => {
+  let items = document.querySelectorAll('#grid-item');
+  let classColor = e.srcElement.className;
+
+  // TODO: Find a way to get the background color of the selected target,
+  // to get rid of this switch statement
+  switch(classColor) {
+    case "black-circle":
+      drawColor = "#000";
+      break;
+    case "blue-circle":
+      drawColor = "#21B5C7";
+      break;
+    case "red-circle":
+      drawColor = "#AA1E1E";
+      break;
+    case "yellow-circle":
+      drawColor = "#DED22C";
+      break;
+    case "green-circle":
+      drawColor = "#17A72F";
+      break;
+    case "orange-circle":
+      drawColor = "#FF7010";
+      break;
+    case "pink-circle":
+      drawColor = "#E616D1";
+      break;
+    case "rainbow-circle":
+      drawColor = "rainbow";
+      break;
+  }
+
+  items.forEach(item => {
+    item.addEventListener("mouseenter", event => {
+      if (drawColor == "rainbow") {
+        event.target.style.backgroundColor =  "#"+((1<<24)*Math.random()|0).toString(16);
+      } else {
+        event.target.style.backgroundColor = drawColor
+      }
+    });
+  });
+};
+
+// Set pencil color change on color click
+document.querySelector('.black-circle').onclick = changeDrawingColor;
+document.querySelector('.blue-circle').onclick = changeDrawingColor;
+document.querySelector('.red-circle').onclick = changeDrawingColor;
+document.querySelector('.yellow-circle').onclick = changeDrawingColor;
+document.querySelector('.green-circle').onclick = changeDrawingColor;
+document.querySelector('.orange-circle').onclick = changeDrawingColor;
+document.querySelector('.pink-circle').onclick = changeDrawingColor;
+
 const rainbowBtn = document.querySelector('.rainbow-circle');
-
-blackBtn.addEventListener('click', () => {
-  let items = document.querySelectorAll('#grid-item');
-
-  items.forEach(item => {
-    item.addEventListener("mouseenter", event =>
-    event.target.style.backgroundColor = "#000"
-    );
-  });
-});
-
-blueBtn.addEventListener('click', () => {
-  let items = document.querySelectorAll('#grid-item');
-
-  items.forEach(item => {
-    item.addEventListener("mouseenter", event =>
-    event.target.style.backgroundColor = "#21B5C7"
-    );
-  });
-});
-
-redBtn.addEventListener('click', () => {
-  let items = document.querySelectorAll('#grid-item');
-
-  items.forEach(item => {
-    item.addEventListener("mouseenter", event =>
-    event.target.style.backgroundColor = "#AA1E1E"
-    );
-  });
-});
-
-yellowBtn.addEventListener('click', () => {
-  let items = document.querySelectorAll('#grid-item');
-
-  items.forEach(item => {
-    item.addEventListener("mouseenter", event =>
-    event.target.style.backgroundColor = "#DED22C"
-    );
-  });
-});
-
-greenBtn.addEventListener('click', () => {
-  let items = document.querySelectorAll('#grid-item');
-
-  items.forEach(item => {
-    item.addEventListener("mouseenter", event =>
-    event.target.style.backgroundColor = "#17A72F"
-    );
-  });
-});
-
-orangeBtn.addEventListener('click', () => {
-  let items = document.querySelectorAll('#grid-item');
-
-  items.forEach(item => {
-    item.addEventListener("mouseenter", event =>
-    event.target.style.backgroundColor = "#FF7010"
-    );
-  });
-});
-
-pinkBtn.addEventListener('click', () => {
-  let items = document.querySelectorAll('#grid-item');
-
-  items.forEach(item => {
-    item.addEventListener("mouseenter", event =>
-    event.target.style.backgroundColor = "#E616D1"
-    );
-  });
-});
 
 rainbowBtn.addEventListener('click', () => {
   let items = document.querySelectorAll('#grid-item');
