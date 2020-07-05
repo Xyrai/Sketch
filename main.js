@@ -97,10 +97,7 @@ let changeDrawingColor = e => {
 
   items.forEach(item => {
     item.addEventListener("mouseenter", event => {
-      console.log(drawColor)
-
       if (drawColor == "rainbow") {
-        console.log(drawColor)
         event.target.style.backgroundColor =  "#"+((1<<24)*Math.random()|0).toString(16);
       } else {
         event.target.style.backgroundColor = drawColor
