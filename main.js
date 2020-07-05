@@ -97,7 +97,10 @@ let changeDrawingColor = e => {
 
   items.forEach(item => {
     item.addEventListener("mouseenter", event => {
+      console.log(drawColor)
+
       if (drawColor == "rainbow") {
+        console.log(drawColor)
         event.target.style.backgroundColor =  "#"+((1<<24)*Math.random()|0).toString(16);
       } else {
         event.target.style.backgroundColor = drawColor
@@ -114,15 +117,4 @@ document.querySelector('.yellow-circle').onclick = changeDrawingColor;
 document.querySelector('.green-circle').onclick = changeDrawingColor;
 document.querySelector('.orange-circle').onclick = changeDrawingColor;
 document.querySelector('.pink-circle').onclick = changeDrawingColor;
-
-const rainbowBtn = document.querySelector('.rainbow-circle');
-
-rainbowBtn.addEventListener('click', () => {
-  let items = document.querySelectorAll('#grid-item');
-
-  items.forEach(item => {
-    item.addEventListener("mouseenter", event =>
-    event.target.style.backgroundColor = "#"+((1<<24)*Math.random()|0).toString(16)
-    );
-  });
-});
+document.querySelector('.rainbow-circle').onclick = changeDrawingColor;
