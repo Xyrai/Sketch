@@ -149,3 +149,8 @@ body {
   text-align: center;
   font-size: 20px;
 }
+
+.settings-btn:hover {
+  cursor: pointer;
+  background-color: #C3073F;
+}
