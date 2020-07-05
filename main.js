@@ -55,7 +55,84 @@ editGridBtn.addEventListener('click', () => {
 });
 
 // Get random colors
+const blackBtn = document.querySelector('.black-circle');
+const blueBtn = document.querySelector('.blue-circle');
+const redBtn = document.querySelector('.red-circle');
+const yellowBtn = document.querySelector('.yellow-circle');
+const greenBtn = document.querySelector('.green-circle');
+const orangeBtn = document.querySelector('.orange-circle');
+const pinkBtn = document.querySelector('.pink-circle');
 const rainbowBtn = document.querySelector('.rainbow-circle');
+
+blackBtn.addEventListener('click', () => {
+  let items = document.querySelectorAll('#grid-item');
+
+  items.forEach(item => {
+    item.addEventListener("mouseenter", event =>
+    event.target.style.backgroundColor = "#000"
+    );
+  });
+});
+
+blueBtn.addEventListener('click', () => {
+  let items = document.querySelectorAll('#grid-item');
+
+  items.forEach(item => {
+    item.addEventListener("mouseenter", event =>
+    event.target.style.backgroundColor = "#21B5C7"
+    );
+  });
+});
+
+redBtn.addEventListener('click', () => {
+  let items = document.querySelectorAll('#grid-item');
+
+  items.forEach(item => {
+    item.addEventListener("mouseenter", event =>
+    event.target.style.backgroundColor = "#AA1E1E"
+    );
+  });
+});
+
+yellowBtn.addEventListener('click', () => {
+  let items = document.querySelectorAll('#grid-item');
+
+  items.forEach(item => {
+    item.addEventListener("mouseenter", event =>
+    event.target.style.backgroundColor = "#DED22C"
+    );
+  });
+});
+
+greenBtn.addEventListener('click', () => {
+  let items = document.querySelectorAll('#grid-item');
+
+  items.forEach(item => {
+    item.addEventListener("mouseenter", event =>
+    event.target.style.backgroundColor = "#17A72F"
+    );
+  });
+});
+
+orangeBtn.addEventListener('click', () => {
+  let items = document.querySelectorAll('#grid-item');
+
+  items.forEach(item => {
+    item.addEventListener("mouseenter", event =>
+    event.target.style.backgroundColor = "#FF7010"
+    );
+  });
+});
+
+pinkBtn.addEventListener('click', () => {
+  let items = document.querySelectorAll('#grid-item');
+
+  items.forEach(item => {
+    item.addEventListener("mouseenter", event =>
+    event.target.style.backgroundColor = "#E616D1"
+    );
+  });
+});
 
 rainbowBtn.addEventListener('click', () => {
   let items = document.querySelectorAll('#grid-item');
