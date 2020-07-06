@@ -39,14 +39,6 @@ body {
   border: 1px solid black;
 }
 
-#settings-container {
-  background-color: pink;
-  float: left;
-
-  width: 400px;
-  height: 45rem;
-}
-
 .main-container {
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr;
